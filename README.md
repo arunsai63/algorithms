@@ -1,2 +1,7 @@
-# algorithms
-algorithms &amp; data structures
+
+# Data Structures
+
+ - Linked List
+
+# Algorithms
+

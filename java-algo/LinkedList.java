@@ -22,6 +22,48 @@ public class LinkedList
         }
     }
 
+    public boolean DeleteByValue(int value)
+    {
+        if(_head == null)
+            return false;
+        else if (_head.data == value)
+        {
+            _head = _head.next;
+            return true;
+        }
+        LinkedListNode node = _head, prev = null;
+        while(node != null && node.data != value)
+        {
+            prev = node;
+            node = node.next;
+        }
+        if (node == null)
+            return false;
+        prev.next = node.next;
+        return true;
+    }
+
+    public boolean DeleteByPos(int pos)
+    {
+        if(pos < 1 || _head == null)
+            return false;
+        else if (pos == 1)
+        {
+            _head = _head.next;
+            return true;
+        }
+        LinkedListNode node = _head, prev = null;
+        while(pos != 1 && node != null)
+        {
+            prev = node;
+            node = node.next;
+            --pos;
+        }
+        if (node == null)
+            return false;
+        prev.next = node.next;
+        return true;
+    }
     public void View() { View(_head); }
     public void View(LinkedListNode node)
     {
@@ -64,9 +106,9 @@ public class LinkedList
         return length;
     }
 
-    public int GetRecursiveLength() { return GetRecursiveLength(_head); }
-    public int GetRecursiveLength(LinkedListNode node)
+    public int GetLengthRecursive() { return GetLengthRecursive(_head); }
+    public int GetLengthRecursive(LinkedListNode node)
     {
-        return node == null ? 0 : 1 + GetRecursiveLength(node.next);
+        return node == null ? 0 : 1 + GetLengthRecursive(node.next);
     }
 }

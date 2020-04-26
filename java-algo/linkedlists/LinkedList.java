@@ -1,4 +1,4 @@
-
+package linkedlists;
 
 public class LinkedList
 {
@@ -22,7 +22,30 @@ public class LinkedList
         }
     }
 
-    public boolean DeleteByValue(int value)
+    public void AddByPos(int value, int position)
+    {
+        if(position < 0 || (_head == null && position != 0))
+            return;
+        LinkedListNode node =  new LinkedListNode(value);
+        if(position == 0)
+        {
+            node.next = _head;
+            _head = node;
+            return;
+        }
+        LinkedListNode temp = _head;
+        while(position != 1 && temp != null)
+        {
+            --position;
+            temp = temp.next;
+        }
+        if (temp == null)
+            return;
+        node.next = temp.next;
+        temp.next = node;
+    }
+
+    public boolean Delete(int value)
     {
         if(_head == null)
             return false;

@@ -1,3 +1,5 @@
+package linkedlists;
+
 public class LinkedListNode 
 {
     public LinkedListNode next;

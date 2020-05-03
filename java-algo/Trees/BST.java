@@ -3,22 +3,38 @@ import java.util.Collection;
 
 public class BST 
 {
-    private Tree _root;
+    private TreeNode _root;
     
+    public boolean Contains(int value) { return Contains(_root, value); }
+    public boolean Contains(TreeNode node, int value)
+    {
+        TreeNode temp = _root;
+        while(temp != null)
+        {
+            if (temp.data > value)
+                temp = temp.Left;
+            else if (temp.data < value)
+                temp = temp.Right;
+            else
+                return true;
+        }
+        return false;
+    }
+
     public void Add(int value)
     {
         if(_root == null)
         {
-            _root = new Tree(value);
+            _root = new TreeNode(value);
             return;
         }
-        Tree temp = _root;
+        TreeNode temp = _root;
         while(temp != null)
         {
             if (temp.data > value)
                 if(temp.Left == null)
                 {
-                    temp.Left = new Tree(value);
+                    temp.Left = new TreeNode(value);
                     return;
                 }
                 else
@@ -26,7 +42,7 @@ public class BST
             else if (temp.data < value)
                 if(temp.Right == null)
                 {
-                    temp.Right = new Tree(value);
+                    temp.Right = new TreeNode(value);
                     return;
                 }
                 else
@@ -47,42 +63,42 @@ public class BST
             Add(i);
     }
 
-    public int getHeight() { return getHeight(_root); }
-    public int getHeight(Tree node)
+    public int GetHeight() { return GetHeight(_root); }
+    public int GetHeight(TreeNode node)
     {
         if (node == null)
             return 0;
-        int lheight = getHeight(node.Left), rheight = getHeight(node.Right);
+        int lheight = GetHeight(node.Left), rheight = GetHeight(node.Right);
         return lheight > rheight ? lheight + 1 : rheight + 1;
     }
 
-    public void inorder() { inorder(_root); }
-    public void inorder(Tree node)
+    public void InOrder() { InOrder(_root); }
+    public void InOrder(TreeNode node)
     {
         if (node.Left != null)
-            inorder(node.Left);
+            InOrder(node.Left);
         System.out.println(node.data);
         if (node.Right != null)
-            inorder(node.Right);    
+            InOrder(node.Right);    
     }
 
-    public void preorder() { preorder(_root); }
-    public void preorder(Tree node)
+    public void PreOrder() { PreOrder(_root); }
+    public void PreOrder(TreeNode node)
     {
         System.out.println(node.data);
         if (node.Left != null)
-            preorder(node.Left);
+            PreOrder(node.Left);
         if (node.Right != null)
-            preorder(node.Right);    
+            PreOrder(node.Right);    
     }
 
-    public void postorder() { postorder(_root); }
-    public void postorder(Tree node)
+    public void PostOrder() { PostOrder(_root); }
+    public void PostOrder(TreeNode node)
     {
         if (node.Left != null)
-            postorder(node.Left);
+            PostOrder(node.Left);
         if (node.Right != null)
-            postorder(node.Right);    
+            PostOrder(node.Right);    
         System.out.println(node.data);    
     }
 }

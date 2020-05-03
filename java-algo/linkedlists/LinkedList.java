@@ -1,4 +1,5 @@
 package linkedlists;
+import java.util.Collection;
 
 public class LinkedList
 {
@@ -22,6 +23,17 @@ public class LinkedList
         }
     }
 
+    public void AddCollection(Collection<Integer> list)
+    {
+        list.forEach(x -> Add(x));
+    }
+
+    public void AddCollection(int[] list)
+    {
+        for (int i : list)
+            Add(i);
+    }
+    
     public void AddByPos(int value, int position)
     {
         if(position < 0 || (_head == null && position != 0))

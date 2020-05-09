@@ -1,14 +1,12 @@
 // import linkedlists.*;
-import Trees.*;
+//import Trees.*;
+import algos.*;
 
 class Program
 {
     public static void main(String[] args)
     {
-        BST bst = new BST();
-        int[] arr = {4, 2, 1, 3, 6, 5, 7};
-        for (int i : arr)
-            bst.Add(i);
-        bst.InOrder();
+        int[] arr = {3,4,4,3};
+        System.out.println(new Algo().CountSumOfPairs(arr, 7));
     }
 }

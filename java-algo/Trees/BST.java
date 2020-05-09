@@ -1,5 +1,4 @@
 package Trees;
-import java.util.Collection;
 
 public class BST 
 {
@@ -50,17 +49,6 @@ public class BST
             else
                 return;
         }
-    }
-
-    public void AddCollection(Collection<Integer> list)
-    {
-        list.forEach(x -> Add(x));
-    }
-
-    public void AddCollection(int[] list)
-    {
-        for (int i : list)
-            Add(i);
     }
 
     public int GetHeight() { return GetHeight(_root); }

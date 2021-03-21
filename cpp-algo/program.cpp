@@ -1,12 +1,19 @@
 #include <iostream>
-#include "algos.cpp"
-#include "sorting.cpp"
+#include <vector>
+// #include "algos.cpp"
+// #include "sorting.cpp"
 using namespace std;
-using namespace algos;
-using namespace sorting;
+#define ll long long int
+// using namespace algos;
+// using namespace sorting;
 
 int main()
 {
-    
+    int test_cases;
+    cin >> test_cases;
+    while (test_cases--)
+    {
+        
+    }
     return 0;
 }

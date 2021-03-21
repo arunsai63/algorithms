@@ -52,7 +52,7 @@ public class BST
     }
 
     public int GetHeight() { return GetHeight(_root); }
-    public int GetHeight(TreeNode node)
+    public static int GetHeight(TreeNode node)
     {
         if (node == null)
             return 0;

@@ -22,4 +22,27 @@ namespace algos
         }
         return -1;
     }
+
+    class algos
+    {
+    private:
+        /* data */
+    public:
+        algos(/* args */);
+        ~algos();
+    };
+
+    algos::method1()
+    {
+
+    }
+    
+    algos::algos(/* args */)
+    {
+    }
+    
+    algos::~algos()
+    {
+    }
+    
 }
